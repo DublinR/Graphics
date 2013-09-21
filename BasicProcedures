@@ -1,2 +1,19 @@
 # Practice Code Here
+
 hist(iris$Sepal.Length)
+
+hist(iris$Sepal.Length, col=c("red","blue","yellow","green")) 
+
+###############################
+
+# Boxplots
+
+fivenum(iris$Sepal.Length)
+
+boxplot(iris$Sepal.Length)
+
+boxplot(iris$Sepal.Length, horizontal = TRUE)
+
+boxplot(Sepal.Length ~ Species, data = iris)
+
+###############################
