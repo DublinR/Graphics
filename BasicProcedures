@@ -1,3 +1,9 @@
+# Histograms and Boxplots
+
+################################
+
+# 1) Histograms
+
 # Practice Code Here
 
 hist(iris$Sepal.Length)
@@ -6,12 +12,13 @@ hist(iris$Sepal.Length, col=c("red","blue","yellow","green"))
 
 ###############################
 
-# Boxplots
+# 2) Boxplots
 
 fivenum(iris$Sepal.Length)
 
 boxplot(iris$Sepal.Length)
 
+#Change the orientation from vertical to horizontal
 boxplot(iris$Sepal.Length, horizontal = TRUE)
 
 boxplot(Sepal.Length ~ Species, data = iris)
