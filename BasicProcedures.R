@@ -10,6 +10,16 @@ hist(iris$Sepal.Length)
 
 hist(iris$Sepal.Length, col=c("red","blue","yellow","green")) 
 
+
+ # Basic Histogram for Horses
+ 
+ #30 horses
+X=c(807, 811, 812, 824, 842, 851, 854, 856, 856, 878,
+882, 883, 884, 884, 884, 886, 887, 889 ,891, 898,
+899, 901, 929, 935 ,937,951 ,968 ,971 ,976, 982)
+hist(X,breaks=c(800,840,880,920,960,1000))
+
+
 ###############################
 
 # 2) Boxplots
