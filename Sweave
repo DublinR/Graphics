@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx, verbatim}
+\setlength{\textwidth}{6.5in} 
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0in} 
+\setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{-1.5cm}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\begin{center}
+{\bf \Large Stat 500 Assignment 1\\}
+ \end{center}
+ 
+ Using the rock data in the datasets package. First we do some plots:\\
+ %%\setkeys{Gin}{width=.3\linewidth}
+<<>>=
+ data(rock)
+  require(ggplot2)
+  plot1 = qplot(x=area, y=log(perm), data=rock) + theme_bw() + geom_smooth(col="red")
+   print(plot1 )
+@
+%%  lattice and ggplots must be inside a print statement to show up
+<<>>=
+   print(plot1 + aes(x = peri) )
+@
+<<>>=
+   print(plot1 + aes(x = shape) )
+@
+
+\end{document}
+
+ Now go back and remove the \%\% comments on the line 15 above here  
+ to set each plot width to .3
+ times linewidth, and the three plots should fit on one line.  If you leave a blank line between the three code chunks above, they will start on new lines.
+
+Summary of the linear model:
+<<>>=
+  rock.lmfit <- lm(log(perm) ~ ., rock)
+  summary(rock.lmfit)
+@
+
+<<>>=
+ xtable::xtable( summary(rock.lmfit)$coef, digits=5)
+@
+<<>>=
+ rock.rlmfit = MASS::rlm( log(perm) ~ ., rock)
+ xtable::xtable( summary(rock.rlmfit)$coef, digits = 4)
+  ## assumes that you have the xtable package available. It creates latex tables.
+@
+
+%To print any R object use a \verb|\Sexpr{any_R_object}| statement like this:
+%AIC of the linear model is \Sexpr{AIC(rock.lmfit)}.  
+ 
+ 
