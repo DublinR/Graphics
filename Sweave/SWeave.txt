@@ -1,0 +1,7 @@
+SWeave
+
+Sweave is a tool that allows to embed the R code for complete data analyses in latex documents. 
+
+knitr (think "neater")
+
+reproducible research 
