@@ -1,4 +1,3 @@
-
 library(devtools)
 install_github('rCharts', 'ramnathv')
 ###################################################
